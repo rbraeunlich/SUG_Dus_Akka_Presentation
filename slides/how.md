@@ -3,7 +3,7 @@
 
 * Let's take a look at a simple Actor
 
-```
+```Scala
 class Guestbook extends Actor {
   val entries: ArrayBuffer[Entry] = ArrayBuffer()
 
@@ -13,11 +13,8 @@ class Guestbook extends Actor {
   }
 }
 ```
-<li class="fragment">Wait... What?! That buffer is mutable state.</li>
-<li class="fragment">THE ROOT OF ALL CONCURRENCY EVIL!!111</li>
 
-
-Don't worry, let Akka handle this for you!
+<li class="fragment">Don't fear no mutable state, let Akka handle this for you!</li>
 
 
 * The base of everything is the `ActorSystem`.
@@ -29,6 +26,8 @@ Don't worry, let Akka handle this for you!
 <li class="fragment">Messages that are sent to an actor are stored.</li>
 
 <li class="fragment">A dispatcher provides threads to take a message from an inbox and execute the actor code.</li>
+
+<li class="fragment">The guarantee is, that no two threads will execute an `Actor` concurrently.</li>
 
 
 Simply put

@@ -3,7 +3,7 @@
 
 * Again, let's take a look at some example messages
 
-```
+```Scala
 object Guestbook {
 
   case object GetAll
