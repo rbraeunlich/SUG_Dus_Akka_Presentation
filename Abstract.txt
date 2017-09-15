@@ -1,2 +1,8 @@
-You cannot spell “Scala” without “Akka”. Although a single framework does not define the language in which it is implemented, Akka has taken a major role within the Scala ecosystem. It is the sixth highest ranked Scala repo on GitHub (as of September 2017) and one of the first choices when it comes to highly concurrent applications. Therefore, when getting to know the bits and pieces of Scala, one will sooner or later come across Akka.
-In this talk you will learn more about Akka and what it is. We’ll start with an overview and then dig into an example. Although this talk is targeted at people with no or minor Akka experience, some parts of it should also be new for listeners with advanced knowledge. In addition to Akka itself, we will talk about some of the extensions surrounding it, namely Akka HTTP, Akka Persistence, Akka Testkit and Akka JS.
+Akka-kadabra
+
+When Akka promises to make all of your concurrency problems disappear it sounds a little bit like magic.
+In order to convince you that it is at least no black magic that is involved I wanna give you an overview of Akka and some of the libraries surrounding it in this talk.
+
+Akka itself has taken a major role within the Scala ecosystem. It is the sixth highest ranked Scala repo on GitHub (as of September 2017) and one of the first choices when it comes to highly concurrent applications. Getting to know the bits and pieces of Scala seems mandatory because sooner or later on will come across Akka.
+
+We’ll start with an overview about Akka and the techniques applied in it and then dig into an example. Although this talk is targeted at people with no or minor Akka experience, some parts of it should also be new for listeners with advanced knowledge. In addition to Akka itself, we will talk about some of the extensions surrounding it, namely Akka HTTP, Akka Persistence, Akka Testkit and AkkaJS.
