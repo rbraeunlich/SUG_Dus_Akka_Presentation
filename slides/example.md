@@ -33,25 +33,3 @@ object Main {
 ```
 <div class="fragment">Hm... that's boring and it doesn't do anything...</div>
 <div class="fragment">Oh! I know! Let's make it a web application</div>
-
-
-First the `Route`
-```Scala
-val route = path("all") {
-  get {
-    val allEntries: Future[ArrayBuffer[Entry]] = (guestbook ? GetAll).mapTo[ArrayBuffer[Entry]]
-    complete(allEntries)
-  }
-} ~
-  path("addEntry") {
-    put {
-      entity(as[Entry]) { entry =>
-        guestbook ! AddEntry(entry)
-        complete("created")
-      }
-    }
-  } ~
-path("index") {
-  getFromResource("index.html")
-}
-```
