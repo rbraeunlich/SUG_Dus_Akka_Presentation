@@ -12,6 +12,5 @@
 Mathias Verraes
 
 
-* Akka allows you to write concurrent applications while avoiding low-level concurrency concepts.
-
-* In other words: Your application is concurrent while your code looks sequential.
+* Akka allows you to write concurrent applications while avoiding low-level concurrency concepts
+<li class="fragment">In other words: Your application is concurrent while your code looks sequential</li>

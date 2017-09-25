@@ -2,8 +2,8 @@
 
 
 * Akka Persistence is based on event sourcing
-* All events are stored and replayed upon restart of the actor
-* It is very important to give an Actor a `persistenceId`
+<li class="fragment">All events are stored and replayed upon restart of the actor</li>
+<li class="fragment">It is very important to give an Actor a `persistenceId`</li>
 
 | Sequence | Event       |
 |----------|-------------|
@@ -38,7 +38,8 @@ override def receiveCommand: Receive = {
 
 * The second method is `receiveRecover`
 <li class="fragment">As the name suggests, this one is used for recovery</li>
-<li class="fragment">It either receives one of the saved events or a snaphot</li>
+<li class="fragment">It receives saved events and snaphots</li>
+<li class="fragment">Those are "replayed" until the last saved state has been reached</li>
 
 
 ```Scala
@@ -53,7 +54,7 @@ override def receiveRecover: Receive = {
 ```
 
 
-The persistent Guestbook
+* The persistent Guestbook
 
 ```Scala
 class Guestbook(id: String) extends PersistentActor with ActorLogging {
@@ -87,3 +88,4 @@ class Guestbook(id: String) extends PersistentActor with ActorLogging {
   }
 }
 ```
+<li class="fragment">Sweet! But how do I know my stuff works?</li>

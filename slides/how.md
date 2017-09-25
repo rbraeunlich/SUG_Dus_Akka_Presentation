@@ -17,17 +17,12 @@ class Guestbook extends Actor {
 <li class="fragment">Don't fear no mutable state, let Akka handle this for you!</li>
 
 
-* The base of everything is the `ActorSystem`.
-
-<li class="fragment">It manages its own threads.</li>
-
-<li class="fragment">Every `Actor` has its own inbox.</li>
-
-<li class="fragment">Messages that are sent to an actor are stored.</li>
-
-<li class="fragment">A dispatcher provides threads to take a message from an inbox and execute the actor code.</li>
-
-<li class="fragment">The guarantee is, that no two threads will execute an `Actor` concurrently.</li>
+* The base of everything is the `ActorSystem`
+<li class="fragment">It manages its own threads</li>
+<li class="fragment">Every `Actor` has its own inbox</li>
+<li class="fragment">Messages that are sent to an actor are stored</li>
+<li class="fragment">A dispatcher provides threads to take a message from an inbox and execute the actor code</li>
+<li class="fragment">The guarantee is, that no two threads will execute an `Actor` concurrently</li>
 
 
 Simply put

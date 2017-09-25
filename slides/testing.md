@@ -1,28 +1,46 @@
-## Akka HTTP
+## Testing Akka
 
 
->The Akka HTTP modules implement a full server- and client-side HTTP stack on top of akka-actor and akka-stream.
-Akka HTTP documentation
-<div class="fragment">That doesn't sound very magically...</div>
+* Basic testing of actors is surprisingly easy
+<li class="fragment">Messages define the public API of an actor</li>
+<li class="fragment">We can evaluate the responses we receive</li>
+<li class="fragment">Akka brings its own testkit to help</li>
+<li class="fragment">Although discouraged, even the internal state of an Actor can be inspected</li>
 
 
-Defining a `Route`
+* Testing `AddEntry`
 ```Scala
-val route = path("all") {
-  get {
-    val allEntries: Future[ArrayBuffer[Entry]] = (guestbook ? GetAll).mapTo[ArrayBuffer[Entry]]
-    complete(allEntries)
-  }
-} ~
-  path("addEntry") {
-    put {
-      entity(as[Entry]) { entry =>
-        guestbook ! AddEntry(entry)
-        complete("created")
-      }
-    }
-  } ~
-path("index") {
-  getFromResource("index.html")
+"save entries" in {
+    val sender = TestProbe()
+    implicit val senderRef = sender.ref
+    val guestbook = actorSystem.actorOf(
+      Props(new Guestbook("1")))
+    val newEntry = Entry("author",
+    "This is the best guestbook eva! <3")
+
+    guestbook ! AddEntry(newEntry)  
+
+    guestbook ! GetAll
+    sender.expectMsg(ArrayBuffer(newEntry))
 }
 ```
+<li class="fragment">`TestProbe` makes it possible to expect certain messages</li>
+
+
+* Testing `GetAll`
+```Scala
+"return all entries" in {
+    val sender = TestProbe()
+    implicit val senderRef = sender.ref
+    val guestbook = actorSystem.actorOf(
+      Props(new Guestbook("2")))
+    val newEntry = Entry("author1", "text1")
+    guestbook ! AddEntry(newEntry)
+    guestbook ! AddEntry(newEntry)
+
+    guestbook ! GetAll
+
+    sender.expectMsg(ArrayBuffer(newEntry, newEntry))
+}
+```
+<li class="fragment">Akka is so cool! I wish I could use it in the frontend, too!</li>

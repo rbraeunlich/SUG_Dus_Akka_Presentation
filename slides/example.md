@@ -1,6 +1,8 @@
 ## Example
 
-We already know this one:
+
+* We already know this one:
+
 ```Scala
 class Guestbook extends Actor {
   val entries: ArrayBuffer[Entry] = ArrayBuffer()
@@ -19,7 +21,7 @@ object Guestbook {
 ```
 
 
-Let's add a main method
+* Let's add a main method
 
 ```Scala
 object Main {
@@ -31,5 +33,5 @@ object Main {
     implicit val guestbook = system.actorOf(Guestbook.props)
 }
 ```
-<div class="fragment">Hm... that's boring and it doesn't do anything...</div>
-<div class="fragment">Oh! I know! Let's make it a web application</div>
+<li class="fragment">Hm... that's boring and it doesn't do anything...</li>
+<li class="fragment">Oh! I know! Let's make it a web application</li>

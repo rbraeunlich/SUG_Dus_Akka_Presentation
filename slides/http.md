@@ -4,7 +4,7 @@
 >The Akka HTTP modules implement a full server- and client-side HTTP stack on top of akka-actor and akka-stream.
 
 Akka HTTP documentation
-<div class="fragment">That doesn't sound very magically...</div>
+<li class="fragment">That doesn't sound very magical...</li>
 
 
 <div>1. Defining a `Route`</div>
@@ -44,4 +44,4 @@ val bindingFuture = Http().bindAndHandle(
       .flatMap(_.unbind()) // unbinding from the port
       .onComplete(_ ⇒ system.terminate()) // shutdown when done
 ```
-<div class="fragment">Cool! But after a restart all my guestbook entries are gone.</div>
+<li class="fragment">Cool! But after a restart all my guestbook entries are gone.</li>
