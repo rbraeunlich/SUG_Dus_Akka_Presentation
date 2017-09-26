@@ -19,7 +19,7 @@
 
 
 ```Scala
-def updateState(add: AddEntry): Unit = entries += add.entry
+def updateState(add: AddEntry): Unit = entries = entries :+ add.entry
 
 override def receiveCommand: Receive = {
   case GetAll => sender ! entries
@@ -47,10 +47,10 @@ override def receiveRecover: Receive = {
     case add: AddEntry =>
       log.info(s"Recovered event $add")
       updateState(add)
-    case SnapshotOffer(_, snapshot: ArrayBuffer[Entry]) =>
+    case SnapshotOffer(_, snapshot: List[Entry]) =>
       log.info(s"Restored snapshot $snapshot")
-      entries ++= snapshot
-  }
+      entries = snapshot
+}
 ```
 
 
@@ -61,17 +61,17 @@ class Guestbook(id: String) extends PersistentActor with ActorLogging {
 
   override def persistenceId: String = id
 
-  val entries: ArrayBuffer[Entry] = ArrayBuffer()
+  var entries: List[Entry] = List()
 
-  def updateState(add: AddEntry): Unit = entries += add.entry
+  def updateState(add: AddEntry): Unit = entries = entries :+ add.entry
 
   override def receiveRecover: Receive = {
     case add: AddEntry =>
       log.info(s"Recovered event $add")
       updateState(add)
-    case SnapshotOffer(_, snapshot: ArrayBuffer[Entry]) =>
+    case SnapshotOffer(_, snapshot: List[Entry]) =>
       log.info(s"Restored snapshot $snapshot")
-      entries ++= snapshot
+      entries = snapshot
   }
 
   override def receiveCommand: Receive = {

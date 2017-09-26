@@ -12,7 +12,7 @@ Akka HTTP documentation
 ```Scala
 val route = path("all") {
   get {
-    val allEntries: Future[ArrayBuffer[Entry]] = (guestbook ? GetAll).mapTo[ArrayBuffer[Entry]]
+    val allEntries: Future[List[Entry]] = (guestbook ? GetAll).mapTo[List[Entry]]
     complete(allEntries)
   }
 } ~

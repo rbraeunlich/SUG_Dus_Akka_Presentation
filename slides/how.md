@@ -5,11 +5,11 @@
 
 ```Scala
 class Guestbook extends Actor {
-  val entries: ArrayBuffer[Entry] = ArrayBuffer()
+  val entries: List[Entry] = List()
 
   override def receive: Receive = {
     case GetAll => sender ! entries
-    case AddEntry(entry) => entries += entry
+    case AddEntry(entry) => entries = entries :+ entry
   }
 }
 ```

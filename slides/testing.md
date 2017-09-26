@@ -21,7 +21,7 @@
     guestbook ! AddEntry(newEntry)  
 
     guestbook ! GetAll
-    sender.expectMsg(ArrayBuffer(newEntry))
+    sender.expectMsg(List(newEntry))
 }
 ```
 <li class="fragment">`TestProbe` makes it possible to expect certain messages</li>
@@ -40,7 +40,7 @@
 
     guestbook ! GetAll
 
-    sender.expectMsg(ArrayBuffer(newEntry, newEntry))
+    sender.expectMsg(List(newEntry, newEntry))
 }
 ```
 <li class="fragment">Akka is so cool! I wish I could use it in the frontend, too!</li>

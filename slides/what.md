@@ -17,4 +17,11 @@ Akka documentation
 ## Actor Model  
 
 
-* First mentioned in the paper TODO
+* First mentioned 1973 in the paper "A Universal Modular ACTOR Formalism for Artificial Intelligence" by Hewitt, Bishop and Steiger
+<li class="fragment">They described an architecture for AI which supports a high degree of parallelism</li>
+<li class="fragment">The architecture is based on a single object: the Actor</li>
+
+
+<li class="fragment">Actors encapsulate control flow and data</li>
+<li class="fragment">Actors can only communicate by exchanging messages</li>
+<li class="fragment">A scheduler controls the execution of Actors</li>
