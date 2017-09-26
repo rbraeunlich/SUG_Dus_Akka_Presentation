@@ -12,7 +12,8 @@
 | ...      | multiply 3  |
 
 
-* Two methods have to be implemented
+* For using persistence, Actors have to extend `PersistentActor`
+<li class="fragment">The trait requires us to implement two methods</li>
 <li class="fragment">First one is `receiveCommand`</li>
 <li class="fragment">It basically does the same as `receive`; it only includes the call to `persist`</li>
 <li class="fragment">Optionally, snapshots can be saved</li>

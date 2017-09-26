@@ -30,7 +30,7 @@ object Main {
 
   def main(args: Array[String]): Unit = {
     implicit val system = ActorSystem("akka-kadabra")
-    implicit val guestbook = system.actorOf(Guestbook.props)
+    val guestbook = system.actorOf(Guestbook.props)
 }
 ```
 <li class="fragment">Hm... that's boring and it doesn't do anything...</li>

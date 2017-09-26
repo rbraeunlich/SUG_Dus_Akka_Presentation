@@ -94,11 +94,6 @@ object Main {
   def main(args: Array[String]): Unit = {
     jQuery("body").append("<h1>✨Akka-kadabra✨</h1>")
     renderInputElements()
-    val retrieveDiv = jQuery("<div>").appendTo(jQuery("body"))
-    jQuery("<button type=\"button\" id=\"retrieve-button\">Get guestbook entries</button>")
-      .click(() => {
-        entryRenderer ! RetrieveEntries
-      }).appendTo(retrieveDiv)
     jQuery("body").append("<br>")
   }
   ...

@@ -15,7 +15,7 @@ object Guestbook {
 
 
 * Basically, everything can be a message
-<li class="fragment">The method signature of `Receive` is `Any => Unit` (Akka Typed will improve this!)</li>
+<li class="fragment">The method signature of `receive` is `Any => Unit` (Akka Typed will improve this!)</li>
 <li class="fragment">Best practice is to use case classes and objects</li>
 <li class="fragment">There are also messages included in Akka like `Terminated`, `PoisonPill`, `ReceiveTimeout`</li>
 

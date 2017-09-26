@@ -5,7 +5,7 @@
 
 ```Scala
 class Guestbook extends Actor {
-  val entries: List[Entry] = List()
+  var entries: List[Entry] = List()
 
   override def receive: Receive = {
     case GetAll => sender ! entries
