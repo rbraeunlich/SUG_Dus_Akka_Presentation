@@ -11,7 +11,7 @@
 <li class="fragment">Let's see how this works</li>
 
 
-* Create a new guestbook entry
+* Actor for creating a new guestbook entry
 
 ```Scala
 class EntrySender extends Actor with ActorLogging {
@@ -25,6 +25,7 @@ class EntrySender extends Actor with ActorLogging {
   }
 }
 object EntrySender {
+  val props = Props[EntrySender]
   case class NewEntry(author: String, text: String)
 }
 ```
@@ -41,6 +42,43 @@ jQuery("<button type=\"button\" id=\"submit-button\">Submit!</button>")
     entryRenderer ! RetrieveEntries
   }).appendTo(inputDiv)
 ```
+
+
+* Actor for retrieving all guestbook entries
+
+```Scala
+class EntryRenderer extends Actor with ActorLogging {
+  override def receive: Receive = {
+    case RetrieveEntries =>
+      val request = new XMLHttpRequest()
+      request.onreadystatechange = _ => {
+        if (request.readyState == 4 && request.status == 200) {
+          jQuery("#entries").remove()
+          jQuery("body").append(s"""<div id="entries">${request.responseText}</div>""")
+        }
+      }
+      request.open("GET", "http://localhost:8080/all", async = true)
+      request.send()
+  }
+}
+
+object EntryRenderer {
+  val props = Props[EntryRenderer]
+  case object RetrieveEntries
+}
+```
+
+
+* Add it to another button
+
+```Scala
+jQuery("<button type=\"button\"
+  id=\"retrieve-button\">Get guestbook entries</button>")
+  .click(() => {
+    entryRenderer ! RetrieveEntries
+  }).appendTo(retrieveDiv)
+```
+
 
 
 * ScalaJS needs a main method, too
@@ -66,3 +104,6 @@ object Main {
   ...
 }
 ```
+
+
+## Play Time!

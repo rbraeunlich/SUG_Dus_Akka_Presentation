@@ -28,3 +28,17 @@ class Guestbook extends Actor {
 Simply put
 
 ![akka_dispatcher](/img/Akka_Dispatcher.png "Logo Title Text 1")
+
+
+* An important concept in Akka is the `ActorRef`
+<li class="fragment">One never receives a reference to the actual `Actor`</li>
+<li class="fragment">That ways, the object behind the `ActorRef` can change or be replaced</li>
+<li class="fragment">E.g. when the `Actor` crashed and is being restarted</li>
+<li class="fragment">Additionally, an `ActorRef` hides where the `Actor` is located</li>
+
+
+The full picture
+
+![full](https://jraviton.files.wordpress.com/2015/01/44.jpg)
+
+<div style="font-size:10px">Saeid Siavashi 2015</div>

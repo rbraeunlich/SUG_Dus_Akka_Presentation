@@ -22,6 +22,6 @@ Akka documentation
 <li class="fragment">The architecture is based on a single object: the Actor</li>
 
 
-<li class="fragment">Actors encapsulate control flow and data</li>
+* Actors encapsulate control flow and data
 <li class="fragment">Actors can only communicate by exchanging messages</li>
 <li class="fragment">A scheduler controls the execution of Actors</li>
