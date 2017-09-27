@@ -39,6 +39,6 @@ Simply put
 
 The full picture
 
-![full](https://jraviton.files.wordpress.com/2015/01/44.jpg)
+![full](/img/44.jpg)
 
-<div style="font-size:10px">Saeid Siavashi 2015</div>
+<div style="font-size:10px">https://jraviton.files.wordpress.com/2015/01/44.jpg Saeid Siavashi 2015</div>

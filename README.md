@@ -1224,6 +1224,18 @@ Some reveal.js features, like external Markdown and speaker notes, require that 
 
 ## License
 
+### Reveal.js
+
 MIT licensed
 
 Copyright (C) 2017 Hakim El Hattab, http://hakim.se
+
+### Images
+
+All pictures of the presentation are either free to use or the sources are referenced in the slides.
+Please be aware that diffiring licenses may apply.
+The image "ich.png" is copyrighted by codecentric AG.
+
+### Presentation Slides
+
+All files under /slides are licensed under the CC BY-NC-SA 4.0 license. See CCLICENSE file.
