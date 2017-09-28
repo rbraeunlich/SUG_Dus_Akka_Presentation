@@ -44,4 +44,7 @@ val bindingFuture = Http().bindAndHandle(
       .flatMap(_.unbind()) // unbinding from the port
       .onComplete(_ ⇒ system.terminate()) // shutdown when done
 ```
-<li class="fragment">Cool! But after a restart all my guestbook entries are gone.</li>
+<ul>
+  <li class="fragment">Cool!</li>
+  <li class="fragment">But after a restart all my guestbook entries are gone.</li>
+</ul>

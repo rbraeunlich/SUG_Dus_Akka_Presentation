@@ -89,4 +89,7 @@ class Guestbook(id: String) extends PersistentActor with ActorLogging {
   }
 }
 ```
-<li class="fragment">Sweet! But how do I know my stuff works?</li>
+<ul>
+  <li class="fragment">Sweet!</li>
+  <li class="fragment">But how do I know my stuff works?</li>
+</ul>

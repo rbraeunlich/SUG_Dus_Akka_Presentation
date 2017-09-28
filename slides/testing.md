@@ -43,4 +43,5 @@
     sender.expectMsg(List(newEntry, newEntry))
 }
 ```
-<li class="fragment">Akka is so cool! I wish I could use it in the frontend, too!</li>
+<li class="fragment">Akka is so cool!</li>
+<li class="fragment">I wish I could use it in the frontend, too!</li>
